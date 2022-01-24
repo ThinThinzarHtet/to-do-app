@@ -1,0 +1,216 @@
+:root {
+    --brightblue: hsl(220, 98%, 61%);
+
+    /* for dark theme */
+    --VeryDarkBlue: hsl(235, 21%, 11%);
+    --VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+    --LightGrayishBlue: hsl(234, 39%, 85%);
+    --LightGrayishBlue: hsl(236, 33%, 92%);
+    --DarkGrayishBlue: hsl(234, 11%, 52%);
+    --VeryDarkGrayishBlue1: hsl(233, 14%, 35%);
+    --VeryDarkGrayishBlue2: hsl(237, 14%, 26%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--VeryDarkBlue);
+    position: relative;
+    font-size: 18px;
+    color: var(--LightGrayishBlue);
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+span {
+    font-size: 80%;
+    display: inline;
+    margin-left: 1.5rem;
+}
+
+li, .footer {
+    list-style: none;
+    background-color: var(--VeryDarkDesaturatedBlue);
+    padding: 0.8rem;
+    border-bottom: 1px solid var(--VeryDarkGrayishBlue1);
+    display: flex;
+    align-items: center;
+}
+
+.background img {
+    width: 100%;
+}
+
+.wrapper {
+    width: 500px;
+    margin: -200px auto;
+    position: relative;
+    z-index: 1;
+    /* position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);    */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    letter-spacing: 0.7rem;
+    font-size: 150%;
+}
+
+.header img {
+   width: 20px;
+   height: 20px;
+   cursor: pointer;
+}
+
+.current {
+    width: 100%;
+    background-color: var(--VeryDarkDesaturatedBlue);
+    display: flex;
+    border-radius: 3px;
+    align-items: center;
+    padding-left: 0.8rem;
+
+}
+
+.current input {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 100%;
+    color: var(--LightGrayishBlue);
+}
+
+.check {
+    border: 1px solid var(--VeryDarkGrayishBlue1);
+    border-radius: 50px;
+    /* background-color: var(--VeryDarkDesaturatedBlue); */
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+
+.check:hover {
+    cursor: pointer;
+}
+
+.box:hover {
+    background-color: white;
+}
+
+.current .current-todo {
+    width: 95%;
+    margin-left: 5px;
+    background-color: var(--VeryDarkDesaturatedBlue);
+    padding: 1rem;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    position: relative;
+}
+
+/* todo list */
+
+.todo-list {
+    margin-top: 2rem;
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.589);
+}
+
+.todos input {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--VeryDarkGrayishBlue1);
+    border-radius: 50px;
+    cursor: pointer;
+
+}
+
+.todos input:hover {
+    background-image: linear-gradient(#25273c, #25273c),linear-gradient(hsl(192, 100%, 67%) ,hsl(280, 87%, 65%));
+    border-radius: 50px;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    border: 1px solid transparent;
+
+}
+
+.list-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.list-wrapper img {
+    width: 13px;
+    height: 13px;
+    margin-left: auto;
+    margin-right: 12px;
+    opacity: 0;
+}
+
+.list-wrapper:hover img {
+    opacity: 1;
+}
+
+/* footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.4rem;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-bottom: none;
+    color: var(--VeryDarkGrayishBlue1);
+}
+
+
+button {
+    background: none;
+    border: none;
+    color: var(--VeryDarkGrayishBlue1);
+    padding: 0.5rem;
+    font-weight: 700;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.footer span {
+    margin-left: 0.5rem;
+    font-weight: 700;
+}
+
+.middle {
+    cursor: pointer;
+}
+
+
+.footer-btn:hover,
+.footer-btn:active {
+    color: var(--LightGrayishBlue);
+} 
+
+.footer-btn:focus {
+    color: var(--brightblue);
+}
+
+.drag-drop {
+    font-size: 80%;
+    text-align: center;
+    margin-top: 50px;
+    color: var(--VeryDarkGrayishBlue1);
+    font-weight: 700;
+}
