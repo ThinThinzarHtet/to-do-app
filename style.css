@@ -135,7 +135,6 @@ li, .footer {
     border: 1px solid var(--VeryDarkGrayishBlue1);
     border-radius: 50px;
     cursor: pointer;
-
 }
 
 .todos input:hover {
@@ -147,12 +146,25 @@ li, .footer {
 
 }
 
+.todos input:checked {
+    backface-visibility: hidden;
+    background: url(./images/icon-check.svg), linear-gradient(to right,hsl(192, 100%, 67%) , hsl(280, 87%, 65%));
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+}
+
+
+
+
+
 .list-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 15px;
     padding-bottom: 15px;
+    cursor: pointer;
 }
 
 .list-wrapper img {
@@ -186,6 +198,7 @@ button {
     padding: 0.5rem;
     font-weight: 700;
     font-family: 'Josefin Sans', sans-serif;
+    cursor: pointer;
 }
 
 .footer span {
