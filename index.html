@@ -18,12 +18,12 @@
 </head>
 <body>
   <div class="background">
-    <img src="images/bg-desktop-dark.jpg" alt="header">
+    <img src="images/bg-desktop-dark.jpg" class="bgphoto" alt="header">
   </div>
   <div class="wrapper">
     <div class="header">
       <h1>TODO</h1>
-      <img src="images/icon-sun.svg" alt="sun">
+      <img src="images/icon-sun.svg" class="change-theme" alt="sun">
     </div>
 
     <!-- currently typing area-->
@@ -42,14 +42,24 @@
           </li>
           <li class="list-wrapper">
             <input type="checkbox" />
-            <span>Hello</span>
+            <span>Complete frontendmentor task</span>
             <img src="./images/icon-cross.svg" alt="cross">
-          </li>
-          
-          
+          </li>        
         </ul>
+
+        <!-- for mobile footer -->
+        <div class="mob">
+          <div class="items-left">
+            <span>0</span> items left
+          </div>
+          <button class="footer-btn clear-btn">Clear Completed</button>
+        </div>
+
+        <!-- desktop -->
         <div class="footer">
-          <span>0 items left</span>
+          <div class="items-left">
+            <span>0</span> items left
+          </div>
           <div class="middle">
             <button class="footer-btn all-btn">All</button>
             <button class="footer-btn active-btn">Active</button>
@@ -76,8 +86,8 @@
   Clear Completed
 
   Drag and drop to reorder list -->
-
-  <!-- <div class="attribution">
+<!-- 
+  <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->

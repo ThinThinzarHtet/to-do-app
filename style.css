@@ -9,6 +9,13 @@
     --DarkGrayishBlue: hsl(234, 11%, 52%);
     --VeryDarkGrayishBlue1: hsl(233, 14%, 35%);
     --VeryDarkGrayishBlue2: hsl(237, 14%, 26%);
+
+    /* for light theme */
+    --bgColor1: hsl(0, 0%, 98%);
+    --bgColor2: hsl(236, 33%, 92%);
+    --wrapperbg: hsl(233, 11%, 84%);
+    --footerColor: hsl(236, 9%, 61%);
+    --fontColor: hsl(235, 19%, 35%);
 }
 
 * {
@@ -26,6 +33,7 @@ body {
     font-size: 18px;
     color: var(--LightGrayishBlue);
     font-family: 'Josefin Sans', sans-serif;
+    transition: all 300ms;
 }
 
 span {
@@ -48,6 +56,8 @@ li, .footer {
 }
 
 .wrapper {
+    display: flex;
+    flex-direction: column;
     width: 500px;
     margin: -200px auto;
     position: relative;
@@ -146,17 +156,18 @@ li, .footer {
 
 }
 
-.todos input:checked {
+.light .todos input:hover {
+    background-image: linear-gradient(#fafafa, #fafafa),linear-gradient(hsl(192, 100%, 67%) ,hsl(280, 87%, 65%));
+}
+
+.todos input:checked,
+.light .todos input:checked {
     backface-visibility: hidden;
     background: url(./images/icon-check.svg), linear-gradient(to right,hsl(192, 100%, 67%) , hsl(280, 87%, 65%));
     background-repeat: no-repeat;
     background-position: center;
     border: none;
 }
-
-
-
-
 
 .list-wrapper {
     display: flex;
@@ -187,6 +198,11 @@ li, .footer {
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
     border-bottom: none;
+    
+}
+
+.items-left {
+    font-size: 90%;
     color: var(--VeryDarkGrayishBlue1);
 }
 
@@ -226,4 +242,84 @@ button {
     margin-top: 50px;
     color: var(--VeryDarkGrayishBlue1);
     font-weight: 700;
+}
+
+.mob {
+    display: none;
+}
+
+/* Light Theme */
+.light {
+    background-color: var(--bgColor2);
+    transition: all 300ms;
+}
+.light .current,
+.light .current .current-todo,
+.light li, 
+.light .footer {
+    background-color: var(--bgColor1);
+    caret-color: var(--VeryDarkBlue);
+    color: var(--fontColor);
+}
+
+.light .check,
+.light .todos input {
+    border-color: var(--wrapperbg);
+}
+
+.light li, .light .footer {
+    background-color: var(--bgColor1);
+    border-color: var(--bgColor2);
+}
+
+.light .todo-list {
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.light .items-left,
+.light button,
+.light .drag-drop {
+    color: var(--footerColor);
+}
+
+.light .footer-btn:hover,
+.light .footer-btn:active {
+    color: var(--fontColor);
+} 
+
+
+@media only screen and (max-width: 600px) {
+    .footer .items-left,
+    .footer .clear-btn {
+        display: none;
+    }
+
+    .footer {
+        justify-content: center;
+        margin-top: 30px;
+        border-radius: 10px;
+        padding: 0.8rem;
+    }
+
+
+    .mob {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #25273c;
+        padding: 0.8rem;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+    }
+
+    .light .mob {
+        background-color: var(--bgColor1);
+    }
+
+    .todo-list,
+    .light .todo-list {
+        box-shadow: none;
+    }
+
+
 }
