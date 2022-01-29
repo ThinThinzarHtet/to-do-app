@@ -156,8 +156,18 @@ li, .footer {
 
 }
 
+.todo-list input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+    color: var(--VeryDarkGrayishBlue1);
+}
+
 .light .todos input:hover {
     background-image: linear-gradient(#fafafa, #fafafa),linear-gradient(hsl(192, 100%, 67%) ,hsl(280, 87%, 65%));
+}
+
+.light .todo-list input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+    color: var(--footerColor);
 }
 
 .todos input:checked,
