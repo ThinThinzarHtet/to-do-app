@@ -1,6 +1,3 @@
-
-
-
 // Change Theme
 const themeIcon = document.querySelector('.change-theme');
 const body = document.querySelector('body');
@@ -52,18 +49,30 @@ function addItems(todo) {
 
 
 // remove item
-ul.addEventListener('click', deleteCheck);
+function removeItems(item) {
+    item.remove();
+    updateCount(-1);
+}
 
-function deleteCheck(e) {
-    const item = e.target;
+// ul.addEventListener('click', deleteCheck);
+// function deleteCheck(e) {
+//     const item = e.target;
+//     //Delete Todo
+//     if(item.classList[0] === 'remove') {
+//         const todo = item.parentElement;
+//         // console.log(todo);
+//         todo.remove();
+//         removeCount(1);
+//     }
+// }
+
+ul.addEventListener('click', (event) => {
+    const item = event.target;
     //Delete Todo
     if(item.classList[0] === 'remove') {
-        const todo = item.parentElement;
-        // console.log(todo);
-        todo.remove();
-        removeCount(1);
+        removeItems(item.parentElement);
     }
-}
+})
 
 // Items Count
 const itemsCount = document.querySelector('.footer .items-left span');
@@ -76,7 +85,52 @@ function updateCount(num) {
     itemsCountMob.innerText = +itemsCountMob.innerText + num;
 }
 
-function removeCount(num) {
-    itemsCount.innerText = +itemsCount.innerText - num;
-    itemsCountMob.innerText = +itemsCountMob.innerText - num;
+// Filter of All, Active and Completed
+document.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', (event) => {
+        filterTodo(event.target.id);
+    })
+})
+
+function filterTodo(id) {
+    const allItems = document.querySelectorAll('li');
+    switch(id) {
+        case 'all':
+            allItems.forEach(item => item.classList.remove('hidden'));
+            break;
+        case 'active':
+            allItems.forEach(item => {
+                if(item.querySelector('input').checked) {
+                    item.classList.add('hidden');
+                } else {
+                    item.classList.remove('hidden');
+                }
+            });
+            break;
+        case 'completed':
+            allItems.forEach(item => {
+                if(item.querySelector('input').checked) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            })
+            break;
+        default:
+    }
 }
+
+// Clear Items
+const clear = document.getElementById('clear');
+const mobClear = document.getElementById('mob-clear');
+clear.addEventListener('click', clearCheckedItems);
+mobClear.addEventListener('click', clearCheckedItems);
+
+function clearCheckedItems() {
+    const checkedItems = document.querySelectorAll('li input[type="checkbox"]:checked');
+    checkedItems.forEach(item => {
+        removeItems(item.closest('li'));
+    })
+}
+
+Sortable.create(simpleList);

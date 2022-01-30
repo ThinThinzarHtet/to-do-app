@@ -147,6 +147,10 @@ li, .footer {
     cursor: pointer;
 }
 
+.todos li.hidden {
+    display:none;
+}
+
 .todos input:hover {
     background-image: linear-gradient(#25273c, #25273c),linear-gradient(hsl(192, 100%, 67%) ,hsl(280, 87%, 65%));
     border-radius: 50px;
@@ -159,6 +163,7 @@ li, .footer {
 .todo-list input[type="checkbox"]:checked + span {
     text-decoration: line-through;
     color: var(--VeryDarkGrayishBlue1);
+    transition: all 0.5s ease;
 }
 
 .light .todos input:hover {
@@ -168,6 +173,7 @@ li, .footer {
 .light .todo-list input[type="checkbox"]:checked + span {
     text-decoration: line-through;
     color: var(--footerColor);
+    transition: all 0.5s ease;
 }
 
 .todos input:checked,
