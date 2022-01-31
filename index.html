@@ -10,10 +10,16 @@
   <link rel="stylesheet" href="style.css" type="text/css">
   <title>Frontend Mentor | Todo app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution { 
+      font-size: 11px; 
+      text-align: center;
+      margin-top: 145px; 
+    }
+
+    .attribution a { 
+      color: hsl(228, 45%, 44%); 
+    }
   </style>
 </head>
 <body>
@@ -35,7 +41,7 @@
     <!-- todo list -->
     <div class="todo-list">
         <ul class="todos" id="simpleList">
-          <li class="list-wrapper">
+          <!-- <li class="list-wrapper">
             <input type="checkbox" />
             <span>Hello</span>
             <img src="./images/icon-cross.svg" class="remove" alt="cross">
@@ -44,7 +50,7 @@
             <input type="checkbox" />
             <span>Complete frontendmentor task</span>
             <img src="./images/icon-cross.svg" class="remove" alt="cross">
-          </li>        
+          </li>         -->
         </ul>
 
         <!-- for mobile footer -->
@@ -55,7 +61,7 @@
           <button class="footer-btn clear-btn" id="mob-clear">Clear Completed</button>
         </div>
 
-        <!-- desktop -->
+        <!-- desktop footer -->
         <div class="footer">
           <div class="items-left">
             <span>0</span> items left
@@ -73,25 +79,15 @@
       </div>
   </div>
 
-
-
-  <!-- Todo -->
-
-  <!-- Add dynamic number items left -->
-
-  <!-- All
-  Active 
-  Completed
-
-  Clear Completed
-
-  Drag and drop to reorder list -->
-<!-- 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
+    Coded by <a href="#">Thin Thinzar Htet</a>.
+  </div>
+
+  <!-- Sortable js library -->
   <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+
+  <!-- Custom JS -->
   <script src="./script.js"></script>
 </body>
 </html>

@@ -59,7 +59,7 @@ li, .footer {
     display: flex;
     flex-direction: column;
     width: 500px;
-    margin: -200px auto;
+    margin: -180px auto;
     position: relative;
     z-index: 1;
     /* position: absolute;
@@ -90,7 +90,7 @@ li, .footer {
     width: 100%;
     background-color: var(--VeryDarkDesaturatedBlue);
     display: flex;
-    border-radius: 3px;
+    border-radius: 8px;
     align-items: center;
     padding-left: 0.8rem;
 
@@ -124,14 +124,13 @@ li, .footer {
     margin-left: 5px;
     background-color: var(--VeryDarkDesaturatedBlue);
     padding: 1rem;
-    border-radius: 2px;
+    border-radius: 8px;
     border: none;
     outline: none;
     position: relative;
 }
 
 /* todo list */
-
 .todo-list {
     margin-top: 2rem;
     box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.589);
@@ -256,6 +255,7 @@ button {
     font-size: 80%;
     text-align: center;
     margin-top: 50px;
+    margin-bottom: 50px;
     color: var(--VeryDarkGrayishBlue1);
     font-weight: 700;
 }
@@ -304,7 +304,25 @@ button {
 } 
 
 
-@media only screen and (max-width: 600px) {
+/* MEDIA QUERY */
+
+/* from 801px to 1023px */
+@media only screen and (max-width: 1023px) {
+    .wrapper {
+        margin-top: -150px;
+    }
+}
+
+/* from 601 to 767px */
+@media only screen and (max-width: 800px) {
+    .wrapper {
+        margin: -160px auto;
+    }
+
+    .background img {
+        height: 200px;
+    }
+
     .footer .items-left,
     .footer .clear-btn {
         display: none;
@@ -316,7 +334,6 @@ button {
         border-radius: 10px;
         padding: 0.8rem;
     }
-
 
     .mob {
         display: flex;
@@ -337,5 +354,37 @@ button {
         box-shadow: none;
     }
 
+}
 
+@media only screen and (max-width: 600px) {
+    .wrapper {
+        width: 80%;
+    }
+    
+    .background img {
+        height: 230px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .current input {
+        font-size: 90%;
+    }
+    span {
+        font-size: 70%;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    .items-left {
+        font-size: 75%;
+    }
+
+    .mob {
+        padding: 0.3rem;
+    }
+
+    .clear-btn {
+        font-size: 60%;
+    }
 }
